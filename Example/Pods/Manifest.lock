@@ -1,0 +1,23 @@
+PODS:
+  - CDEmptyView (0.0.4)
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - CDEmptyView (from `../`)
+  - Masonry
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
+
+EXTERNAL SOURCES:
+  CDEmptyView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CDEmptyView: 9e5d4b2c4475a66bf3b2940a86989a7adc7c3ef4
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: 77054faf1400b12ce37440a4d1984be09c1f6251
+
+COCOAPODS: 1.7.0.beta.3

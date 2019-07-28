@@ -1,0 +1,27 @@
+{
+  "name": "CDEmptyView",
+  "version": "0.0.4",
+  "summary": "A short description of CDEmptyView.",
+  "description": "空试图展位",
+  "homepage": "https://gitlab.ttsing.com/ios/CDEmptyView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "WQ": "469775163@qq.com"
+  },
+  "source": {
+    "git": "https://gitlab.ttsing.com/ios/CDEmptyView.git",
+    "tag": "0.0.4"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CDEmptyView/Classes/**/*",
+  "frameworks": [
+    "UIKit",
+    "Foundation",
+    "CoreFoundation"
+  ]
+}

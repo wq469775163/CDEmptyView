@@ -1,0 +1,14 @@
+#use_frameworks!
+
+platform :ios, '8.0'
+inhibit_all_warnings!
+pod 'Masonry'
+target 'CDEmptyView_Example' do
+  pod 'CDEmptyView', :path => '../'
+
+  target 'CDEmptyView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,6 @@
+framework module CDEmptyView {
+  umbrella header "CDEmptyView-umbrella.h"
+
+  export *
+  module * { export * }
+}
