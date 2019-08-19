@@ -10,81 +10,83 @@
 
 @implementation UIView (CDExtension)
 
-- (void)setHp_x:(CGFloat)hp_x {
+- (void)setCd_x:(CGFloat)cd_x {
     CGRect frame = self.frame;
-    frame.origin.x = hp_x;
+    frame.origin.x = cd_x;
     self.frame = frame;
 }
-- (CGFloat)hp_x {
+- (CGFloat)cd_x {
     return self.frame.origin.x;
 }
-- (void)setHp_y:(CGFloat)hp_y {
-    
+
+- (void)setCd_y:(CGFloat)cd_y {
     CGRect frame = self.frame;
-    frame.origin.y = hp_y;
+    frame.origin.y = cd_y;
     self.frame = frame;
 }
-- (CGFloat)hp_y {
+- (CGFloat)cd_y {
     return self.frame.origin.y;
 }
-- (void)setHp_centerX:(CGFloat)hp_centerX{
-    CGPoint center = self.center;
-    center.x = hp_centerX;
-    self.center = center;
-}
-- (CGFloat)hp_centerX {
-    return self.center.x;
-}
 
-- (void)setHp_centerY:(CGFloat)hp_centerY {
-    CGPoint center = self.center;
-    center.y = hp_centerY;
-    self.center = center;
-}
-- (CGFloat)hp_centerY {
-    return self.center.y;
-}
-
-- (void)setHp_width:(CGFloat)hp_width {
+- (void)setCd_width:(CGFloat)cd_width {
     CGRect frame = self.frame;
-    frame.size.width = hp_width;
+    frame.size.width = cd_width;
     self.frame = frame;
 }
-- (CGFloat)hp_width {
+- (CGFloat)cd_width {
     return self.frame.size.width;
 }
 
-- (void)setHp_height:(CGFloat)hp_height {
+- (void)setCd_height:(CGFloat)cd_height {
     CGRect frame = self.frame;
-    frame.size.height = hp_height;
+    frame.size.height = cd_height;
     self.frame = frame;
 }
-- (CGFloat)hp_height {
+- (CGFloat)cd_height {
     return self.frame.size.height;
 }
 
-- (void)setHp_size:(CGSize)hp_size {
+- (void)setCd_centerX:(CGFloat)cd_centerX{
+    CGPoint center = self.center;
+    center.x = cd_centerX;
+    self.center = center;
+}
+- (CGFloat)cd_centerX {
+    return self.center.x;
+}
+
+- (void)setCd_centerY:(CGFloat)cd_centerY {
+    CGPoint center = self.center;
+    center.y = cd_centerY;
+    self.center = center;
+}
+- (CGFloat)cd_centerY {
+    return self.center.y;
+}
+
+- (void)setCd_size:(CGSize)cd_size {
     CGRect frame = self.frame;
-    frame.size = hp_size;
+    frame.size = cd_size;
     self.frame = frame;
 }
-- (CGSize)hp_size {
+- (CGSize)cd_size {
     return self.frame.size;
 }
 
-- (void)setHp_origin:(CGPoint)hp_origin {
+- (void)setCd_origin:(CGPoint)cd_origin {
     CGRect frame = self.frame;
-    frame.origin = hp_origin;
+    frame.origin = cd_origin;
     self.frame = frame;
 }
-
-- (CGPoint)hp_origin {
+- (CGPoint)cd_origin {
     return self.frame.origin;
 }
-- (CGFloat)hp_maxX {
+
+- (CGFloat)cd_maxX {
     return self.frame.origin.x + self.frame.size.width;
 }
-- (CGFloat)hp_maxY{
+
+- (CGFloat)cd_maxY{
     return self.frame.origin.y + self.frame.size.height;
 }
 

@@ -13,9 +13,6 @@
 
 @property (nonatomic, strong) CDEmptyView *cd_emptyView;
 
-
-/******* 使用下面的四个方法最好将EmptyView的autoShowEmptyView值置为NO，关闭自动显隐，以保证不受自动显隐的影响 ****/
-
 /**
  一般用于开始请求网络时调用，cd_startLoading调用时会暂时隐藏emptyView
  当调用cd_endLoading方法时，cd_endLoading方法内部会根据当前的tableView/collectionView的

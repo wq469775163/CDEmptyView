@@ -10,15 +10,15 @@
 
 @interface UIView (CDExtension)
 
-@property (nonatomic, assign) CGFloat hp_x;
-@property (nonatomic, assign) CGFloat hp_y;
-@property (nonatomic, assign) CGFloat hp_width;
-@property (nonatomic, assign) CGFloat hp_height;
-@property (nonatomic, assign) CGFloat hp_centerX;
-@property (nonatomic, assign) CGFloat hp_centerY;
-@property (nonatomic, assign) CGSize  hp_size;
-@property (nonatomic, assign) CGPoint hp_origin;
-@property (nonatomic, assign, readonly) CGFloat hp_maxX;
-@property (nonatomic, assign, readonly) CGFloat hp_maxY;
+@property (nonatomic, assign) CGFloat cd_x;
+@property (nonatomic, assign) CGFloat cd_y;
+@property (nonatomic, assign) CGFloat cd_width;
+@property (nonatomic, assign) CGFloat cd_height;
+@property (nonatomic, assign) CGFloat cd_centerX;
+@property (nonatomic, assign) CGFloat cd_centerY;
+@property (nonatomic, assign) CGSize  cd_size;
+@property (nonatomic, assign) CGPoint cd_origin;
+@property (nonatomic, assign, readonly) CGFloat cd_maxX;
+@property (nonatomic, assign, readonly) CGFloat cd_maxY;
 
 @end

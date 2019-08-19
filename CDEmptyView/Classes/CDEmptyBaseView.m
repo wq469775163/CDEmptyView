@@ -27,7 +27,7 @@
     // 自动调整view的高度，以保证上边距和下边距不变
     
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth |  UIViewAutoresizingFlexibleHeight;
-    }
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -35,8 +35,8 @@
     UIView *view = self.superview;
     //判断是否是 UIScrollView，如果不是，不做操作
     if (view && [view isKindOfClass:[UIScrollView class]]) {
-        self.hp_width = view.hp_width;
-        self.hp_height = view.hp_height;
+        self.cd_width = view.cd_width;
+        self.cd_height = view.cd_height;
     }
     [self setupSubviews];
 }
@@ -53,8 +53,8 @@
     if (newSuperview && ![newSuperview isKindOfClass:[UIScrollView class]]) return;
     
     if (newSuperview) {
-        self.hp_width = newSuperview.hp_width;
-        self.hp_height = newSuperview.hp_height;
+        self.cd_width = newSuperview.cd_width;
+        self.cd_height = newSuperview.cd_height;
     }
 }
 

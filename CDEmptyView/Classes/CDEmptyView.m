@@ -53,13 +53,13 @@
     [super prepare];
     //默认值,用来判断是否设置过content的Y值
     self.contentViewY = 1000;
-    
+
 }
 
 - (void)setupSubviews{
     [super setupSubviews];
     
-    contentMaxWidth = self.hp_width - 30.f; //最大宽度（ScrollView 的宽 - 30）
+    contentMaxWidth = self.cd_width - 30.f; //最大宽度（ScrollView 的宽 - 30）
     contentWidth = 0;//内容物宽度
     contentHeight = 0;//内容物高度
     subViweMargin = self.subViewMargin ? self.subViewMargin : kSubViewMargin;
@@ -111,8 +111,8 @@
     
     //自定义view
     if (self.customView) {
-        contentWidth = self.customView.hp_width;
-        contentHeight = self.customView.hp_maxY;
+        contentWidth = self.customView.cd_width;
+        contentHeight = self.customView.cd_maxY;
     }
     
     ///设置坐标
@@ -125,7 +125,7 @@
     CGFloat scrollViewHeight = self.bounds.size.height;
     
     //重新设置self的frame（大小为content的大小）
-    self.hp_size = CGSizeMake(contentWidth, contentHeight);
+    self.cd_size = CGSizeMake(contentWidth, contentHeight);
     
     /// 修改这个中心点就行了
     CGFloat emptyViewCenterX = scrollViewWidth * 0.5f;
@@ -136,25 +136,25 @@
     self.contentView.frame = self.bounds;
     
     //子控件的centerX设置
-    CGFloat centerX = self.contentView.hp_width * 0.5f;
+    CGFloat centerX = self.contentView.cd_width * 0.5f;
     if (self.customView) {
-        self.customView.hp_centerX      = centerX;
+        self.customView.cd_centerX      = centerX;
         
     }else{
-        _promptImageView.hp_centerX = centerX;
-        _titleLabel.hp_centerX       = centerX;
-        _detailLabel.hp_centerX = centerX;
-        _actionButton.hp_centerX    = centerX;
+        _promptImageView.cd_centerX = centerX;
+        _titleLabel.cd_centerX       = centerX;
+        _detailLabel.cd_centerX = centerX;
+        _actionButton.cd_centerX    = centerX;
     }
     
     //有无设置偏移
     if (self.contentViewOffset) {
-        self.hp_centerY += self.contentViewOffset;
+        self.cd_centerY += self.contentViewOffset;
     }
     
     //有无设置Y坐标值
     if (self.contentViewY < 1000) {
-        self.hp_y = self.contentViewY;
+        self.cd_y = self.contentViewY;
     }
 }
 #pragma mark - ------------------ Setup View ------------------
@@ -179,8 +179,8 @@
     }
     self.promptImageView.frame = CGRectMake(0, 0, imgViewWidth, imgViewHeight);
     
-    contentWidth = self.promptImageView.hp_size.width;
-    contentHeight = self.promptImageView.hp_maxY;
+    contentWidth = self.promptImageView.cd_size.width;
+    contentHeight = self.promptImageView.cd_maxY;
 }
 
 - (void)setupTitleLabel:(NSString *)titleStr{
@@ -198,7 +198,7 @@
     self.titleLabel.textColor = textColor;
     
     contentWidth = width > contentWidth ? width : contentWidth;
-    contentHeight = self.titleLabel.hp_maxY;
+    contentHeight = self.titleLabel.cd_maxY;
 }
 
 - (void)setupDetailLabel:(NSString *)detailStr{
@@ -228,12 +228,11 @@
     self.detailLabel.textColor = textColor;
     
     contentWidth = width > contentWidth ? width : contentWidth;
-    contentHeight = self.detailLabel.hp_maxY;
+    contentHeight = self.detailLabel.cd_maxY;
 }
 - (void)setupActionBtn:(NSString *)btnTitle target:(id)target action:(SEL)action btnClickBlock:(HPActionTapBlock)btnClickBlock{
     
     UIFont *font = self.actionBtnFont.pointSize ? self.actionBtnFont : kActionBtnFont;
-    //    CGFloat fontSize = font.pointSize;
     UIColor *titleColor = self.actionBtnTitleColor ? self.actionBtnTitleColor : kBlackColor;
     UIColor *backGColor = self.actionBtnBackGroundColor ? self.actionBtnBackGroundColor : [UIColor redColor];
     UIColor *borderColor = self.actionBtnBorderColor ? self.actionBtnBorderColor : [UIColor redColor];
@@ -272,7 +271,7 @@
     }
     
     contentWidth = btnWidth > contentWidth ? btnWidth : contentWidth;
-    contentHeight = self.actionButton.hp_maxY;
+    contentHeight = self.actionButton.cd_maxY;
 }
 
 #pragma mark - ------------------ 懒加载 ------------------
@@ -326,7 +325,7 @@
         _contentViewOffset = contentViewOffset;
         
         if (_promptImageView || _titleLabel || _detailLabel || _actionButton || self.customView) {
-            self.hp_centerY += self.contentViewOffset;
+            self.cd_centerY += self.contentViewOffset;
         }
     }
 }
@@ -335,7 +334,7 @@
         _contentViewY = contentViewY;
         
         if (_promptImageView || _titleLabel || _detailLabel || _actionButton || self.customView) {
-            self.hp_y = self.contentViewY;
+            self.cd_y = self.contentViewY;
         }
     }
 }
@@ -494,16 +493,15 @@
         }
     }
 }
-#pragma mark - ------------------ Event Method ------------------
+
+#pragma mark - Private Method
+
 - (void)actionBtnClick:(UIButton *)sender{
     if (self.btnClickBlock) {
         self.btnClickBlock();
     }
 }
 
-#pragma mark - ------------------ Private Method ------------------
-
-#pragma mark - ------------------ Help Method ------------------
 - (CGSize)returnTextWidth:(NSString *)text size:(CGSize)size font:(UIFont *)font{
     CGSize textSize = [text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil].size;
     return textSize;

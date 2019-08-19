@@ -15,26 +15,10 @@ static const char *KEmptyViewkey = "KEmptyViewkey";
 
 @implementation UIScrollView (CDEmpty)
 
-//static char kEmptyViewKey;
-
-
 - (void)setCd_emptyView:(CDEmptyView *)cd_emptyView {
-//    if (cd_emptyView != self.cd_emptyView) {
-//
-//        objc_setAssociatedObject(self, KEmptyViewkey, cd_emptyView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//
-//        for (UIView *view in self.subviews) {
-//            if ([view isKindOfClass:[CDEmptyView class]]) {
-//                [view removeFromSuperview];
-//            }
-//        }
-//        [self addSubview:self.cd_emptyView];
-//    }
-
     
     // addSubview添加同一个View，会先从View移除之后再添加
     objc_setAssociatedObject(self, KEmptyViewkey, cd_emptyView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
     [self addSubview:cd_emptyView];
 }
 - (CDEmptyView *)cd_emptyView {
@@ -61,7 +45,6 @@ static const char *KEmptyViewkey = "KEmptyViewkey";
 }
 - (void)getDataAndSet{
     
-    NSLog(@"totalDataCount====%ld",[self totalDataCount]);
     if ([self totalDataCount] == 0) {
         [self show];
     } else {
@@ -120,7 +103,7 @@ static const char *KEmptyViewkey = "KEmptyViewkey";
 + (void)load {
     
     // 类或者分类一旦被加载到运行时，就会调用+ (void)load 这个方法
-    // 目前项目中视图是否展示通过类数据count自行判断的，先不用交换刷新方法
+    // 目前项目中视图是否展示通过类数据count自行判断的，先不用交换刷新方法，手动控制空视图显隐
  /*
     Method reloadData = class_getInstanceMethod(self, @selector(reloadData));
     Method cd_reloadData = class_getInstanceMethod(self, @selector(cd_reloadData));
